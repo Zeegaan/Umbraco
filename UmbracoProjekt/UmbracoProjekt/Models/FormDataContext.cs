@@ -9,7 +9,7 @@ namespace UmbracoProjekt.Controllers
 {
     public class FormDataContext : DbContext
     {
-        public DbSet<Form> Persons { get; set; }
+        public DbSet<Form> Forms { get; set; }
         public FormDataContext(DbContextOptions<FormDataContext> options) : base(options)
         {
             //Checking if database exist, if not, create it

@@ -76,3 +76,4 @@ C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\UmbracoProjekt.dll
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\UmbracoProjekt.pdb
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\UmbracoProjekt.genruntimeconfig.cache
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Form\Forms.cshtml.g.cs

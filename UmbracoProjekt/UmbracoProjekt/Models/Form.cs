@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UmbracoProjekt.Models
 {
-    public class Person
+    public class Form
     {
         public int Id { get; set; }
         [Required, Display(Name = "First Name")]
