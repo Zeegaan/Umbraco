@@ -19,8 +19,12 @@ namespace UmbracoProjekt.Controllers
         {
             return View();
         }
+        public IActionResult Forms()
+        {
+            return View(db.Forms);
+        }
         [HttpPost]
-        public IActionResult Create(Person p)
+        public IActionResult Create(Form p)
         {
             //implement validating form here
 
