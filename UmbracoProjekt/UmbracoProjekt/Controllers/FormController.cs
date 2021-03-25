@@ -9,6 +9,12 @@ namespace UmbracoProjekt.Controllers
 {
     public class FormController : Controller
     {
+        public FormDataContext db;
+        //Using dependency injection to inject database into controller
+        public FormController(FormDataContext db)
+        {
+            this.db = db;
+        }
         public IActionResult Index()
         {
             return View();
@@ -16,7 +22,11 @@ namespace UmbracoProjekt.Controllers
         [HttpPost]
         public IActionResult Create(Person p)
         {
-            return View();
+            //implement validating form here
+
+            db.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
