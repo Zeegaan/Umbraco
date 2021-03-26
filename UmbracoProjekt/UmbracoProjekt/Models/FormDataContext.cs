@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UmbracoProjekt.Models;
 
-namespace UmbracoProjekt.Controllers
+namespace UmbracoProjekt.Models
 {
     public class FormDataContext : DbContext
     {
