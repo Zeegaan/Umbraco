@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UmbracoProjekt.Controllers;
+using UmbracoProjekt.Models;
 
 namespace UmbracoProjekt
 {
@@ -33,6 +34,7 @@ namespace UmbracoProjekt
 
                 options.UseSqlServer(connectionString);
             });
+            services.AddSingleton<SerialNumberRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
