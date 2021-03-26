@@ -17,11 +17,11 @@ namespace UmbracoProjekt.Controllers
             this.db = db;
             this.numberRepo = numberRepo;
         }
-        public IActionResult Index()
+        public IActionResult Create()
         {
             return View();
         }
-        public IActionResult Forms()
+        public IActionResult Index()
         {
             return View(db.Forms);
         }
