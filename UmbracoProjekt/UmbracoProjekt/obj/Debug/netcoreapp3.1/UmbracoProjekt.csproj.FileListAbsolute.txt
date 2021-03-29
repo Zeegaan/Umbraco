@@ -77,3 +77,10 @@ C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\UmbracoProjekt.pdb
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\UmbracoProjekt.genruntimeconfig.cache
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Form\Create.cshtml.g.cs
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
