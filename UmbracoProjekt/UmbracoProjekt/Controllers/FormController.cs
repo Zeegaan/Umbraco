@@ -9,8 +9,8 @@ namespace UmbracoProjekt.Controllers
 {
     public class FormController : Controller
     {
-        public FormDataContext db;
-        public SerialNumberRepo numberRepo;
+        private FormDataContext db;
+        private SerialNumberRepo numberRepo;
         //Using dependency injection to inject database into controller
         public FormController(FormDataContext db, SerialNumberRepo numberRepo)
         {
@@ -46,7 +46,7 @@ namespace UmbracoProjekt.Controllers
                 return View();
             }
 
-            db.Add(p);
+            db.Forms.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -64,14 +64,18 @@ namespace UmbracoProjekt.Controllers
         }
         public bool CheckIfUsedTwice(string serialNumber)
         {
+            if(db.Forms.EntityType == null)
+            {
+                return true;
+            }
             List<string> usedNumbers = new List<string>();
             foreach (var form in db.Forms)
             {
-                if(form.SerialNumber == serialNumber)
+                if (form.SerialNumber == serialNumber)
                 {
                     usedNumbers.Add(form.SerialNumber);
                 }
-                if(usedNumbers.Count == 2)
+                if (usedNumbers.Count == 2)
                 {
                     return false;
                 }

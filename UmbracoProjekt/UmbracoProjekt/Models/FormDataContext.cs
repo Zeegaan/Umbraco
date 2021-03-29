@@ -15,5 +15,9 @@ namespace UmbracoProjekt.Models
             //Checking if database exist, if not, create it
             Database.EnsureCreated();
         }
+        public FormDataContext()
+        {
+
+        }
     }
 }
