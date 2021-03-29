@@ -26,25 +26,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            @if (User.Identity.IsAuthenticated)
-                            {
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
                                 <form id="logout" action="@Url.Action("Logout", "Account")" method="post">
                                     <button type="submit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</button>
                                 </form>
-                            }
-                            else
-                            {
-                                <a href="@Url.Action("Login", "Account")" title="log in" class="w3-bar-item w3-button w3-hide-small w3-hover-white">
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a href="@Url.Action("Login", "Account")" title="log in" class="nav-link text-dark">
                                     Login
                                 </a>
-                                <a href="@Url.Action("Register", "Account")" class="w3-bar-item w3-button w3-hide-small w3-hover-white">
+                            </li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("Register", "Account")" class="nav-link text-dark">
                                     Register
                                 </a>
+                            </li>
 
-                            }
-                        </li>
-                    </ul>
+                        }
+                        </ul>
                 </div>
             </div>
         </nav>

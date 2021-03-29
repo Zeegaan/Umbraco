@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace UmbracoProjekt.Controllers
         {
             return View();
         }
+        [HttpGet, Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View(db.Forms);
