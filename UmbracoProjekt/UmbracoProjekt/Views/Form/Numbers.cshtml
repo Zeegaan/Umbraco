@@ -1,0 +1,10 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model IEnumerable<string>
+
+<h1>Serialnumbers: </h1>
+
+@foreach (var number in Model)
+{
+    <p>@number</p>
+}
+
