@@ -52,6 +52,10 @@ namespace UmbracoProjekt.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult Numbers()
+        {
+            return View(numberRepo.Get());
+        }
 
         public bool CheckIfValid(string serialNumber)
         {
