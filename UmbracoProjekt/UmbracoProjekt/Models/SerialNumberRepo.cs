@@ -10,10 +10,12 @@ namespace UmbracoProjekt.Models
         private List<string> serialNumbers;
         public SerialNumberRepo()
         {
+            Guid newGuid;
             List<string> result = new List<string>();
             for (int i = 1; i < 101; i++)
             {
-                result.Add(i.ToString());
+                newGuid = Guid.NewGuid();
+                result.Add(newGuid.ToString());
             }
             serialNumbers = result;
         }
