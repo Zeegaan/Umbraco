@@ -2,16 +2,66 @@
 @model IEnumerable<UmbracoProjekt.Models.Form>
 
 @{
+    ViewData["Title"] = "Index";
     Layout = "_Layout";
-    ViewData["Title"] = "All forms";
 }
 
-<h1>Forms</h1>
-@foreach (var form in Model)
-{
-    <h4>Form number: @form.Id</h4>
-    <p>First name: @form.FirstName</p>
-    <p>Last name: @form.LastName</p>
-    <p>Email adress: @form.EmailAdress</p>
-    <p>Serial number: @form.SerialNumber</p>
-}
+<h2>All submitted forms</h2>
+
+<p>
+    <a asp-action="Create">Create New Form</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParm"]">@Html.DisplayNameFor(model => model.Id)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.FirstName)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

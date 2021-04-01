@@ -23,9 +23,34 @@ namespace UmbracoProjekt.Controllers
             return View();
         }
         [HttpGet, Authorize(Roles = "Admin")]
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder, string searchString)
         {
-            return View(db.Forms);
+            ViewData["IdSortParm"] = String.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
+            ViewData["NameSortParm"] = sortOrder == "Name" ? "name_desc" : "Name";
+            ViewData["CurrentFilter"] = searchString;
+            var forms = db.Forms.AsQueryable();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                forms = forms.Where(f => f.LastName.Contains(searchString)
+                                       || f.FirstName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "id_desc":
+                    forms = forms.OrderByDescending(f => f.Id);
+                    break;
+                case "name_desc":
+                    forms = forms.OrderByDescending(f => f.FirstName);
+                    break;
+                case "Name":
+                    forms = forms.OrderBy(f => f.FirstName);
+                    break;
+                default:
+                    forms = forms.OrderBy(f => f.Id);
+                    break;
+            }
+
+            return View(forms.ToList());
         }
         [HttpPost]
         public IActionResult Create(Form p)
