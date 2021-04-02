@@ -23,12 +23,24 @@ namespace UmbracoProjekt.Controllers
             return View();
         }
         [HttpGet, Authorize(Roles = "Admin")]
-        public IActionResult Index(string sortOrder, string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
             ViewData["IdSortParm"] = String.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
             ViewData["NameSortParm"] = sortOrder == "Name" ? "name_desc" : "Name";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
             ViewData["CurrentFilter"] = searchString;
             var forms = db.Forms.AsQueryable();
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 forms = forms.Where(f => f.LastName.Contains(searchString)
@@ -49,8 +61,9 @@ namespace UmbracoProjekt.Controllers
                     forms = forms.OrderBy(f => f.Id);
                     break;
             }
+            int pageSize = 3;
+            return View(await PaginatedList<Form>.CreateAsync(forms, pageNumber ?? 1, pageSize));
 
-            return View(forms.ToList());
         }
         [HttpPost]
         public IActionResult Create(Form p)
