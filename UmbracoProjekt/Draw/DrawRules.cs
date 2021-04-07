@@ -25,7 +25,7 @@ namespace Draw
             return false;
         }
 
-        public bool CheckIfValid(string serialNumber)
+        private bool CheckIfValid(string serialNumber)
         {
             foreach (var number in serialNumbers)
             {
@@ -37,7 +37,7 @@ namespace Draw
             return false;
         }
 
-        public bool CheckIfUsedTwice(string serialNumber)
+        private bool CheckIfUsedTwice(string serialNumber)
         {
             //making new empty list of string
             List<string> usedNumbers = new List<string>();

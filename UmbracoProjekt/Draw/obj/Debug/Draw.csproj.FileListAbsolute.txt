@@ -1,0 +1,8 @@
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\bin\Debug\Draw.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\bin\Debug\Draw.pdb
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\obj\Debug\Draw.csprojAssemblyReference.cache
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\obj\Debug\Draw.csproj.CoreCompileInputs.cache
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\obj\Debug\Draw.csproj.CopyComplete
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\obj\Debug\Draw.dll
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\Draw\obj\Debug\Draw.pdb

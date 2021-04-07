@@ -2512,10 +2512,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Draw/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Draw.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Draw.dll": {}
+        }
+      },
       "UmbracoProjekt/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Draw": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.4",
           "Microsoft.EntityFrameworkCore": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4"
@@ -8380,6 +8390,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Draw/1.0.0": {
+      "type": "project",
+      "path": "../Draw/Draw.csproj",
+      "msbuildProject": "../Draw/Draw.csproj"
     },
     "UmbracoProjekt/1.0.0": {
       "type": "project",

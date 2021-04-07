@@ -1545,6 +1545,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Draw/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Draw.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Draw.dll": {}
+        }
       }
     }
   },
@@ -5850,10 +5859,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Draw/1.0.0": {
+      "type": "project",
+      "path": "../Draw/Draw.csproj",
+      "msbuildProject": "../Draw/Draw.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Draw >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.4",
       "Microsoft.EntityFrameworkCore >= 5.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.4"
@@ -5885,7 +5900,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj": {
+              "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

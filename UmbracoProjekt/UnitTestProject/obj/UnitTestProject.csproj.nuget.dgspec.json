@@ -4,6 +4,16 @@
     "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\UnitTestProject\\UnitTestProject.csproj": {}
   },
   "projects": {
+    "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj",
+        "projectName": "Draw",
+        "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\UmbracoProjekt\\UmbracoProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +37,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj": {
+                "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Draw;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace UmbracoProjekt.Controllers
     {
         private FormDataContext db;
         private SerialNumberRepo numberRepo;
+        DrawRules rules;
         //Using dependency injection to inject database into controller
         public FormController(FormDataContext db, SerialNumberRepo numberRepo)
         {
@@ -78,13 +80,13 @@ namespace UmbracoProjekt.Controllers
                 return View();
             }
             //checking if serialnumber is a number in the draw & then sending error to user if it isn't
-            if (!CheckIfValid(p.SerialNumber))
+            if (!rules.CheckRules(p.SerialNumber))
             {
                 ModelState.AddModelError("", "Serialnumber is not valid");
                 return View();
             }
             //Checking if serialnumber is already used twice and sending error to user if its used
-            if (!CheckIfUsedTwice(p.SerialNumber))
+            if (!rules.CheckRules(p.SerialNumber))
             {
                 ModelState.AddModelError("", "Serialnumber already used twice");
                 return View();
@@ -97,39 +99,6 @@ namespace UmbracoProjekt.Controllers
         public IActionResult Numbers()
         {
             return View(numberRepo.Get());
-        }
-
-        public bool CheckIfValid(string serialNumber)
-        {
-            //Loop through all serialnumbers in repo, check if it already exists.
-            foreach (var number in numberRepo.Get())
-            {
-                if(number == serialNumber)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool CheckIfUsedTwice(string serialNumber)
-        {
-            //making new empty list of string
-            List<string> usedNumbers = new List<string>();
-
-            foreach (var form in db.Forms)
-            {
-                //check if the serial numbers match, if they do, add them to the UsedNumbers list
-                if (form.SerialNumber == serialNumber)
-                {
-                    usedNumbers.Add(form.SerialNumber);
-                }
-                //Check if we already have 2 numbers in the database, if yes, return false.
-                if (usedNumbers.Count == 2)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }
