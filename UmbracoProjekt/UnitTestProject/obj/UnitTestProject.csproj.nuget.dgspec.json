@@ -113,6 +113,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj": {
+                "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj"
+              },
               "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\UmbracoProjekt\\UmbracoProjekt.csproj": {
                 "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\UmbracoProjekt\\UmbracoProjekt.csproj"
               }

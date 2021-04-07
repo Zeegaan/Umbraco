@@ -8404,6 +8404,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Draw >= 1.0.0",
       "MSTest.TestAdapter >= 2.1.1",
       "MSTest.TestFramework >= 2.1.1",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
@@ -8439,6 +8440,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj": {
+              "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\Draw\\Draw.csproj"
+            },
             "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\UmbracoProjekt\\UmbracoProjekt.csproj": {
               "projectPath": "C:\\Users\\lebee\\Documents\\GitHub\\Umbraco\\UmbracoProjekt\\UmbracoProjekt\\UmbracoProjekt.csproj"
             }

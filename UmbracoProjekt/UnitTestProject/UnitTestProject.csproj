@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Draw\Draw.csproj" />
     <ProjectReference Include="..\UmbracoProjekt\UmbracoProjekt.csproj" />
   </ItemGroup>
 
