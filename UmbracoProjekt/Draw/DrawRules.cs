@@ -31,10 +31,10 @@ namespace Draw
             {
                 if (number == serialNumber)
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
 
         private bool CheckIfUsedTwice(string serialNumber)

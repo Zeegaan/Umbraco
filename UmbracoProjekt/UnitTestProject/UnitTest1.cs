@@ -13,6 +13,7 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTest1
     {
+        /*
         private SerialNumberRepo numbers = new SerialNumberRepo();
         private Mock<DbSet<Form>> mockSet = new Mock<DbSet<Form>>();
         private Mock<FormDataContext> mockContext = new Mock<FormDataContext>();
@@ -67,5 +68,6 @@ namespace UnitTestProject
             mockSet.Verify(m => m.Add(It.IsAny<Form>()), Times.Exactly(2));
             mockContext.Verify(m => m.SaveChanges(), Times.Exactly(2));
         }
+        */
     }
 }
