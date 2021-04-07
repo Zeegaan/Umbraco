@@ -25,10 +25,11 @@ namespace UmbracoProjekt.Controllers
         [HttpGet, Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
+            //Take viewdata from Razor page
             ViewData["CurrentSort"] = sortOrder;
             ViewData["IdSortParm"] = String.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
             ViewData["NameSortParm"] = sortOrder == "Name" ? "name_desc" : "Name";
-
+            //Checking if there is entered a searchstring
             if (searchString != null)
             {
                 pageNumber = 1;
@@ -37,15 +38,17 @@ namespace UmbracoProjekt.Controllers
             {
                 searchString = currentFilter;
             }
-
+            //Taking viewdata from razor page
             ViewData["CurrentFilter"] = searchString;
+            //Take all the forms from database as queryable
             var forms = db.Forms.AsQueryable();
-
+            //If we have a search string, get the names that contain the searchstring
             if (!String.IsNullOrEmpty(searchString))
             {
                 forms = forms.Where(f => f.LastName.Contains(searchString)
                                        || f.FirstName.Contains(searchString));
             }
+            //Arrange sortorder, if not any of the cases, we go to default
             switch (sortOrder)
             {
                 case "id_desc":
@@ -61,6 +64,7 @@ namespace UmbracoProjekt.Controllers
                     forms = forms.OrderBy(f => f.Id);
                     break;
             }
+            //Pagesize default is 3, so we take 3 items and show them on the page
             int pageSize = 3;
             return View(await PaginatedList<Form>.CreateAsync(forms, pageNumber ?? 1, pageSize));
 
@@ -97,6 +101,7 @@ namespace UmbracoProjekt.Controllers
 
         public bool CheckIfValid(string serialNumber)
         {
+            //Loop through all serialnumbers in repo, check if it already exists.
             foreach (var number in numberRepo.Get())
             {
                 if(number == serialNumber)
@@ -108,17 +113,17 @@ namespace UmbracoProjekt.Controllers
         }
         public bool CheckIfUsedTwice(string serialNumber)
         {
-            if(db.Forms.EntityType == null)
-            {
-                return true;
-            }
+            //making new empty list of string
             List<string> usedNumbers = new List<string>();
+
             foreach (var form in db.Forms)
             {
+                //check if the serial numbers match, if they do, add them to the UsedNumbers list
                 if (form.SerialNumber == serialNumber)
                 {
                     usedNumbers.Add(form.SerialNumber);
                 }
+                //Check if we already have 2 numbers in the database, if yes, return false.
                 if (usedNumbers.Count == 2)
                 {
                     return false;
