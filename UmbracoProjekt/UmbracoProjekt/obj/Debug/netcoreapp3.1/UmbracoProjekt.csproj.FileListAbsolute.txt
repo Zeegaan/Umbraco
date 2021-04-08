@@ -87,3 +87,4 @@ C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Form\Numbers.cshtml.g.cs
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Draw.dll
 C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\bin\Debug\netcoreapp3.1\Draw.pdb
+C:\Users\lebee\Documents\GitHub\Umbraco\UmbracoProjekt\UmbracoProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Form\CreateNumbers.cshtml.g.cs

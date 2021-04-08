@@ -1,0 +1,8 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+
+@using (Html.BeginForm())
+{
+    <p>Enter number: @Html.TextBox("count")</p>
+<input type="submit" value="Submit" />
+}

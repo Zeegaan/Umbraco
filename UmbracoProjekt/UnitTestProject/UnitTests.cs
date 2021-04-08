@@ -71,7 +71,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestAddTwice()
         {
-            Form newForm = new Form { SerialNumber = "60b60c18-23fc-4563-a192-ba1f853b44f0" };
+            Form newForm = new Form { SerialNumber = "927a5fba-fd64-4269-9a7d-5a721f8dce6e" };
             for (int i = 0; i < 2; i++)
             {
                 if (rules.CheckRules(newForm.SerialNumber))
@@ -84,7 +84,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestAddingThrice()
         {
-            Form newForm = new Form { SerialNumber = "de726309-d625-459b-a3e0-760f46d5e746" };
+            Form newForm = new Form { SerialNumber = "52d047ee-2af1-4d55-87f0-bc9c0bba772a" };
             for (int i = 0; i < 3; i++)
             {
                 if (rules.CheckRules(newForm.SerialNumber))
@@ -96,7 +96,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void TestAddingSameNumber()
+        public void TestAdding()
         {
             List<string> numbers = new List<string> {
                 "f425c273-bf92-4371-be30-b29654bd7047",
@@ -121,6 +121,41 @@ namespace UnitTestProject
 
             };
 
+            foreach (var number in numbers)
+            {
+                if (rules.CheckRules(number))
+                {
+                    forms.Add(new Form());
+                }
+            }
+            Assert.AreEqual(13, forms.Count);
+        }
+        [TestMethod]
+        public void TestValidation()
+        {
+            //Making list, made slight changes so these differ from our previous List
+            List<string> numbers = new List<string> {
+                "f425c273-bf92-4371-be30-b29654bd7048",
+
+                "8a6a0f29-5157-448f-91c4-2092b374b93c",
+
+                "74059605-5019-4175-af87-aa27354acb31",
+
+                "5e51ad47-ca9b-4852-9fa2-fb5a7221b985",
+
+                "d05baa9d-b747-4dcc-868a-3c1bd90e6566",
+
+                "52d047ee-2af1-4d55-87f0-bc9c0bba772s",
+
+                "927a5fba-fd64-4269-9a7d-5a721f8dce6c",
+
+                "a1d8fda0-3b58-4097-b92a-0e731da695e1",
+
+                "7bd2d853-13bc-4ffd-9938-46462dec37c2",
+
+                "d91ac353-37c5-400e-b3ce-d9c51caf0723"
+            };
+            //trying to add them to the forms list, they should all be denied
             foreach (var number in numbers)
             {
                 if (rules.CheckRules(number))

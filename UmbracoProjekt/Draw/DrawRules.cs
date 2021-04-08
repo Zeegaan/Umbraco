@@ -27,14 +27,16 @@ namespace Draw
 
         private bool CheckIfValid(string serialNumber)
         {
+            //Loop through each number
             foreach (var number in serialNumbers)
             {
+                //If number is in database, it must be valid
                 if (number == serialNumber)
                 {
-                    return false;
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
         private bool CheckIfUsedTwice(string serialNumber)

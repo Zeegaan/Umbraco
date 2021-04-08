@@ -19,6 +19,7 @@ namespace UmbracoProjekt.Controllers
         {
             this.db = db;
             this.numberRepo = numberRepo;
+            rules = new DrawRules(numberRepo.Get(), db.Forms.ToList());
         }
         public IActionResult Create()
         {
@@ -70,6 +71,16 @@ namespace UmbracoProjekt.Controllers
             int pageSize = 3;
             return View(await PaginatedList<Form>.CreateAsync(forms, pageNumber ?? 1, pageSize));
 
+        }
+        public IActionResult CreateNumbers()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateNumbers(int count)
+        {
+            numberRepo.Create(count);
+            return RedirectToAction("Index");
         }
         [HttpPost]
         public IActionResult Create(Form p)
