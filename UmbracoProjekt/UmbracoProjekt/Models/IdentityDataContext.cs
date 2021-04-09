@@ -11,6 +11,7 @@ namespace UmbracoProjekt.Models
     {
         public IdentityDataContext(DbContextOptions<IdentityDataContext> options) : base(options)
         {
+            //Checking if database exist, if not, create it
             Database.EnsureCreated();
         }
     }
