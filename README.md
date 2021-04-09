@@ -11,6 +11,7 @@ This project can make serial numbers, recieve forms, and check the forms for cer
 
 ```
 Download the project.
+Unzip the project
 Open it in Visual Studio Code/ Visual Studio
 
 ```
@@ -20,16 +21,16 @@ Open it in Visual Studio Code/ Visual Studio
 To use Acme-Corp, follow these steps:
 
 ```
-1. Launch the application and go to Account/Register
+1. Launch the application and go to https://localhost/:XXXXX/Account/Register
 2. Make an account
 3. Close the application
 3. Open up the AcmeCorp_Identity database, and view the table dbo.AspNetRoles
 4. Type "1" under Id(or whatever Id you desire) And "Admin" under Name, now you've established an admin role! Time to make yourself an admin.
 5. View the table dbo.Users, and copy your Id. 
 6. View the table dbo.AspNetUserRoles and paste in your Id in the "UserId" coloumn, and type "1" under RoleId(Or whatever Id you chose, in step 3)
-7. Launch the application and go to Account/Login, login to your account, if already logged in, log out, then log in.
+7. Launch the application and go to https://localhost/:XXXXX/Account/Login, login to your account, if already logged in, log out, then log in.
 8. You're now an admin and have acces to all the features!
-9. Click the "Create Serialnumbers" link in the top, or go to Forms/CreateNumbers and type in however many serial numbers you'd like to make.
-10. You can now start to make forms by clicking the "Draw" link, or going to Form/Create, and the project should be up and running!
+9. Click the "Make Serialnumbers" link in the top, or go to https://localhost/:XXXXX/Forms/CreateNumbers and type in however many serial numbers you'd like to make.
+10. You can now start to make forms by clicking the "Draw" link, or going to https://localhost/:XXXXX/Form/Create, and the project should be up and running!
 ```
 
