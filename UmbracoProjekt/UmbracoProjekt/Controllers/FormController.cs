@@ -67,8 +67,8 @@ namespace UmbracoProjekt.Controllers
                     forms = forms.OrderBy(f => f.Id);
                     break;
             }
-            //Pagesize default is 3, so we take 3 items and show them on the page
-            int pageSize = 3;
+            //Pagesize default is 10, so we take 10 items and show them on the page
+            int pageSize = 10;
             return View(await PaginatedList<Form>.CreateAsync(forms, pageNumber ?? 1, pageSize));
 
         }
@@ -80,7 +80,7 @@ namespace UmbracoProjekt.Controllers
         public IActionResult CreateNumbers(int count)
         {
             numberRepo.Create(count);
-            return RedirectToAction("Index");
+            return RedirectToAction("Numbers");
         }
         [HttpPost]
         public IActionResult Create(Form p)
