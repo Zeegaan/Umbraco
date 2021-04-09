@@ -3,8 +3,22 @@
 
 <h1>Serialnumbers: </h1>
 
-@foreach (var number in Model)
-{
-    <p>@number</p>
-}
-
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Serial Number
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

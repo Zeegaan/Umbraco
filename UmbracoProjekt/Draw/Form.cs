@@ -18,5 +18,7 @@ namespace Draw
         public string EmailAdress { get; set; }
         [Display(Name = "Serial Number")]
         public string SerialNumber { get; set; }
+        [Required, Range(18, 200, ErrorMessage ="You must be a valid age over 18 to enter this draw")]
+        public int Age { get; set; }
     }
 }

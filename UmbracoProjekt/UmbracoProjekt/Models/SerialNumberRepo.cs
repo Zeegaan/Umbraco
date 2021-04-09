@@ -30,6 +30,7 @@ namespace UmbracoProjekt.Models
         public void Delete(string serialNumber)
         {
             serialNumbers.Remove(serialNumber);
+            SaveChanges();
         }
         public void SaveChanges()
         {
