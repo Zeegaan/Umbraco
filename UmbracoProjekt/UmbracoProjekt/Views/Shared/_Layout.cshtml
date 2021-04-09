@@ -31,12 +31,6 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="Index">Forms</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="CreateNumbers">Make Serialnumbers</a>
-                            </li>
-                            <li class="nav-item">
                                 <form id="logout" action="@Url.Action("Logout", "Account")" method="post">
                                     <button type="submit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</button>
                                 </form>
@@ -55,6 +49,18 @@
                                 </a>
                             </li>
 
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="Index">Forms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="Numbers">All Serialnumbers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="CreateNumbers">Make Serialnumbers</a>
+                            </li>
                         }
                     </ul>
                 </div>
